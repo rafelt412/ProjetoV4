@@ -5,5 +5,6 @@ description = ""
 authors = ["Rafael Ferreira Torres <rafelt444@gmail.com>"]
 requires-python = ">=3.11"
 dependencies = [
+    "pandas==2.2.3",
     "poetry==1.8.4",
 ]
