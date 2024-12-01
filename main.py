@@ -2,8 +2,14 @@ import pandas as pd
 
 save = []
 
-
 def validar_entrada(entrada):
+  """
+  Função que valida a entrada do usuário.
+  Args:
+    entrada (str): Entrada do usuário.
+  Returns:
+    bool: True se a entrada for válida, False caso contrário.
+  """
   if len(entrada) < 3:
     raise ValueError(
         'Entrada inválida, o número de caracteres deve ser maior ou igual a 3')
@@ -19,9 +25,9 @@ def validar_entrada(entrada):
   if entrada[0].isuuper():
     raise ValueError(
         'Entrada inválida, o primeiro caractere deve ser minúsculo')
-  if not isinstance(entrada, int):
-    ...
-
+  if isinstance(entrada, int):
+    raise ValueError('Entrada inválida, o valor deve ser uma string')
+  return True  
 
 def criar_animal_comida():
   """
