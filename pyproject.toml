@@ -1,4 +1,4 @@
-[project]
+[tool.poetry]
 name = "planov4"
 version = "0.2.0"
 description = ""

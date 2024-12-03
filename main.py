@@ -85,3 +85,4 @@ def loop_criar_animal_comida():
         break
       else:
         continue
+validar_entrada(entrada=' cachorro')
