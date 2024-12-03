@@ -83,3 +83,8 @@ def filtrar_comida(comida):
     df = ler()
     df_comida = df[df['food'] == comida]
     return print(df_comida)
+
+
+def mostrar_json():
+  df = ler()
+  
