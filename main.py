@@ -1,7 +1,10 @@
 import pandas as pd
+import os
 
 save = []
 
+def limpar_terminal():
+  os.system('clear')
 
 def validar_entrada(entrada):
   """
@@ -68,6 +71,7 @@ def stop():
   Se o usuário digitar P o loop para, caso contrário o loop continua
   """
   go = input('[P]arar?').strip().upper()  # Solicita ao usuário se deseja parar o loop
+  limpar_terminal()
   if go == 'P':  # Verifica se o usuário digitou 'P' se sim:
     return True  # Então Retorna True caso o usuário deseje parar o loop
   else:  # Caso contrário
@@ -85,12 +89,14 @@ def loop_criar_animal_comida():
   """
   while True:  # Cria um loop infinito
     try:  # Tenta executar o código abaixo
+      limpar_terminal()
       criar = criar_animal_comida()  # Chama a função criar_animal_comida e armazena o retorno na variável criar
       global save  # Declara a variável save como global.
       save.append(criar)  # Adiciona o retorno da função criar_animal_comida na lista save
       df = pd.DataFrame(save)  # Cria um DataFrame com a lista save
       df.to_json('diretorio.json', orient='records')  # Salva o DataFrame em um arquivo json
       if stop() is True:  # Chama a função stop e verifica se o retorno é True
+        limpar_terminal()
         break  # Se o retorno for True, sai do loop
       else:
         continue
