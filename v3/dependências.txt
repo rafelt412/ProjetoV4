@@ -1,0 +1,10 @@
+[pyproject]
+name = "planov4"
+version = "0.3.0"
+description = "Versão 0.0.3 do meu projeto, para aperfeiçoar minhas habilidades em programação"
+authors = ["Rafael Ferreira Torres <rafelt444@gmail.com>"]
+requires-python = ">=3.11"
+dependencies = [
+    "pandas==2.2.3",
+    "black",
+]
