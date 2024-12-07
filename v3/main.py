@@ -5,4 +5,5 @@ save = []
 
 
 def criar_animal_comida():
-    animal = input()
+    animal = input("Digite o nome de um animal: ")
+    comida = input("Digite o nome de uma comida: ")
