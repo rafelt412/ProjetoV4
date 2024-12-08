@@ -36,7 +36,7 @@ def criar_animal_comida():
             continue
         else:
             break
-    return animal, comida
+    return {"pet": animal, "food": comida}
 
 
 def validar_entrada(entrada, tipo):
@@ -77,5 +77,19 @@ def validar_entrada(entrada, tipo):
             clear()
             f'{e}'
             return False
-a = criar_animal_comida()
-print(a)
+
+
+def save_files_json():
+    dic = criar_animal_comida()
+    global save
+    save.append(dic)
+    df = pd.DataFrame(save)
+    df.to_json('diretorio.json', orient="records")
+
+
+def loop_criar_file():
+    while True:
+        save_files_json()
+        go = input('[P]arar? ').upper()
+        if go == 'P':
+            break
