@@ -25,12 +25,11 @@ def criar_animal_comida():
         Tupla (animal,comida):str
     """
     animal = input("Digite o nome de um animal: ")
-    validar_entrada(entrada= animal)
     comida = input("Digite o nome de uma comida: ")
-    return animal,comida
+    return animal, comida
 
 
-def validar_entrada(entrada):
+def validar_entrada(entrada, tipo):
     """
     Função que valida a entrada de dados do usuário
     na parte de "criação" do animal e a comida
@@ -40,11 +39,14 @@ def validar_entrada(entrada):
         (animal):str e (comida):str
     """
     while True:
-        if not entrada:
-            clear()
-            print(f'Não deixe o nome do(a) {entrada} em branco!')
-            continue
-        if len(entrada) < 3:
-            ...
-        ...
-salve
+        try:
+            if isinstance(entrada,str) and not entrada.strip():
+                clear()
+                print(f'Erro: não deixe espaços em branco no(a) {tipo}')
+                continue
+            float_entrada = float(entrada)
+            if float_entrada is False():
+                clear()
+                print(f'Erro: não digite 0 no(a) {tipo}')
+        except:
+            pass
